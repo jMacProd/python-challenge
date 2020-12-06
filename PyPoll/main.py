@@ -3,13 +3,15 @@ import csv
 
 voterlist = []
 candidatelist = []
-uniquename = []
+clTest = []
+#uniquename = []
+
 
 #defining a function that can be used in the loop?
-def candidate():
-    for name in candidatelist:
-        if name not in uniquename:
-            uniquename.append(name)
+#def candidate():
+#    for name in candidatelist:
+#        if name not in uniquename:
+#            uniquename.append(name)
 
 csvpath = os.path.join("Resources","election_data.csv")
 
@@ -25,18 +27,66 @@ with open(csvpath, "r") as csvfile:
         #len(row)
         voterlist.append(row[0])
 
+        clTest.append(row[2])
+
         #A complete list of candidates who received votes
         #https://www.geeksforgeeks.org/python-get-unique-values-list/
-        candidatelist.append(row[2])
+        if row[2] not in candidatelist: candidatelist.append(row[2])
+        
+            
+        #for candidate in candidatelist:
+            #if row[2] == candidate: khan = khan + 1
+            #votecountdict = {candidate:if row[2] = candidate: }
+         #   name + candidate = []
+          #  votecountdict = {candidate:(if row[2] == candidate):2}
+        
+        
 
-#The percentage of votes each candidate won
+        
+        
+        #The total number of votes each candidate won
+        #I think I need to create a dictionary - set key:0
+        #monthchangedict = {monthlist[i+1]: valuelistdiff[i] for i in range(len(monthlist)-1)} 
+        #votercountdict = {"khan":(if row[2]thenlist1)}}
+        
+        #for name
 
-#The total number of votes each candidate won
+        
+        #if row[2] == "Khan": khan = khan + 1
+
+       
+
+#The percentage of votes each candidate won "uniquecount/voterlist"
+
+
 
 #The winner of the election based on popular vote.
 
-print(candidatelist)
-#print(candidate())
+#def CountFrequency(my_list): 
+#    votecountdict = {}
+#    for item in my_list:
+#        if item in votecountdict:
+#            votecountdict[item] += 1
+#        else
+#            votecountdict[item] = 1
+#
+#    for key, value in votecountdict.items():
+
+
+
+votecountdict = {}
+
+for c in range(len(clTest)):
+    votecountdict[clTest[c]] = clTest.count(
+        clTest[c]
+    )
+
+
+#print(candidatelist) 
+print(votecountdict)
+ #   candidate()
+ #   print(khan)
+
 
 print(f"Election Results")
 print(f"-------------------------")
