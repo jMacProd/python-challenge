@@ -56,24 +56,28 @@ valuelistdiff = [int(valuelist[n])-int(valuelist[n-1]) for n in range(1,len(valu
 average = statistics.mean(valuelistdiff)
 #print(round(average, 2))
 
-#create new month list removing the first item
-#then create a dictionary of month:change
+#create new month list removing the first item - not done
+#then create a dictionary of month:change - found how to convert existing 2 lists into dictionary
+    #https://www.geeksforgeeks.org/python-convert-two-lists-into-a-dictionary/
+monthchangedict = {monthlist[i+1]: valuelistdiff[i] for i in range(len(monthlist)-1)} 
+
 #find max value in dictionary and return key
+    #https://www.geeksforgeeks.org/python-get-key-with-maximum-value-in-dictionary/
+greatestincreasekey = max(monthchangedict, key=monthchangedict.get) 
+greatestincreasevalue = max(valuelistdiff)
+#print(greatestincreasekey)
+#print(max(valuelistdiff))
+
 #find min value in dictinary and return key
-newmlist = monthlist[1, 5]
-#newmonthlist.pop(0)
-print(newmlist)
-#print(len(newmonthlist))
-
-
-
+greatestdecreasekey = min(monthchangedict, key=monthchangedict.get) 
+greatestdecreasevalue = min(valuelistdiff)
 
 print(f"Financial Analysis")
 print(f"  ----------------------------")
 print(f"Total Months: {str(len(monthlist))}")
 print(f"Total: ${str(nettotal)}")
 print(f"Average  Change: ${round(average, 2)}")
-#print(f"Greatest Increase in Profits: ")
-#print(f"Greatest Decrease in Profits:  ")
+print(f"Greatest Increase in Profits: {greatestincreasekey} (${greatestincreasevalue}) ")
+print(f"Greatest Decrease in Profits: {greatestdecreasekey} (${greatestdecreasevalue}) ")
 
 #Export to textfile
