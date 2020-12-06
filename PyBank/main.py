@@ -73,7 +73,7 @@ greatestdecreasekey = min(monthchangedict, key=monthchangedict.get)
 greatestdecreasevalue = min(valuelistdiff)
 
 print(f"Financial Analysis")
-print(f"  ----------------------------")
+print(f"----------------------------")
 print(f"Total Months: {str(len(monthlist))}")
 print(f"Total: ${str(nettotal)}")
 print(f"Average  Change: ${round(average, 2)}")
@@ -81,3 +81,15 @@ print(f"Greatest Increase in Profits: {greatestincreasekey} (${greatestincreasev
 print(f"Greatest Decrease in Profits: {greatestdecreasekey} (${greatestdecreasevalue}) ")
 
 #Export to textfile
+output_path = os.path.join("Analysis", "PyBankAnalysis.txt")
+
+with open(output_path, "w") as textfile:
+    textfile.write("Financial Analysis\n")
+    textfile.write(f"----------------------------\n")
+    textfile.write(f"Total Months: {str(len(monthlist))}\n")
+    textfile.write(f"Total: ${str(nettotal)}\n")
+    textfile.write(f"Average  Change: ${round(average, 2)}\n")
+    textfile.write(f"Greatest Increase in Profits: {greatestincreasekey} (${greatestincreasevalue})\n")
+    textfile.write(f"Greatest Decrease in Profits: {greatestdecreasekey} (${greatestdecreasevalue})\n")
+    
+
