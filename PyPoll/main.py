@@ -51,49 +51,17 @@ with open(csvpath, "r") as csvfile:
          #   name + candidate = []
           #  votecountdict = {candidate:(if row[2] == candidate):2}
         
-        
-
-        
-        
-        #The total number of votes each candidate won
-        #I think I need to create a dictionary - set key:0
-        #monthchangedict = {monthlist[i+1]: valuelistdiff[i] for i in range(len(monthlist)-1)} 
-        #votercountdict = {"khan":(if row[2]thenlist1)}}
-        
-        #for name
-
-        
-        #if row[2] == "Khan": khan = khan + 1
-
-       
-
-#The percentage of votes each candidate won "uniquecount/voterlist"
 
 
-
-#The winner of the election based on popular vote.
-
-#def CountFrequency(my_list): 
-#    votecountdict = {}
-#    for item in my_list:
-#        if item in votecountdict:
-#            votecountdict[item] += 1
-#        else
-#            votecountdict[item] = 1
-#
-#    for key, value in votecountdict.items():
-
-
-
-list = ['a','b','a','c','d','c','c']
+#https://www.tutorialspoint.com/counting-the-frequencies-in-a-list-using-dictionary-in-python
 votecountdict = {}
 for item in clTest:
     if (item in votecountdict):
         votecountdict[item] += 1
     else:
         votecountdict[item] = 1
-for key, value in votecountdict.items():
-    print("% s -> % d" % (key, value))
+#for key, value in votecountdict.items():
+#    print("% s -> % d" % (key, value))
 
 
 #print(candidatelist) 
@@ -102,14 +70,31 @@ for key, value in votecountdict.items():
  #   print(khan)
 
 
+#The percentage of votes each candidate won val
+
+percentage  = []
+
+for x in votecountdict:
+    percentage.append(votecountdict[x] / len(voterlist))
+
+#print(percentage)
+
+
+
+#The winner of the election based on popular vote.
+winner = max(votecountdict, key=votecountdict.get) 
+
+
+
+
 print(f"Election Results")
 print(f"-------------------------")
 print(f"Total Votes: {str(len(voterlist))}") #3521001
 print(f"-------------------------")
-#print(f"Khan: 63.000% (2218231)")
+#print(f"{votecountdict[0]}: {percentage[0]}% ({votecountdict[0]})")
 #print(f"Correy: 20.000% (704200)")
 #print(f"Li: 14.000% (492940)")
 #print(f"O'Tooley: 3.000% (105630)")
 #print(f"-------------------------")
-#print(f"Winner: Khan")
+print(f"Winner: {winner}")
 #print(f"-------------------------")
