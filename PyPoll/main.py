@@ -32,6 +32,17 @@ with open(csvpath, "r") as csvfile:
         #A complete list of candidates who received votes
         #https://www.geeksforgeeks.org/python-get-unique-values-list/
         if row[2] not in candidatelist: candidatelist.append(row[2])
+
+        
+
+   
+#        votecountdict = {}
+#        for name in candidatelist:
+#            votecountdict[name] = 1
+#                if name = row(2):
+#                    len(row2)
+#                else:
+#                    0)
         
             
         #for candidate in candidatelist:
@@ -74,16 +85,19 @@ with open(csvpath, "r") as csvfile:
 
 
 
+list = ['a','b','a','c','d','c','c']
 votecountdict = {}
-
-for c in range(len(clTest)):
-    votecountdict[clTest[c]] = clTest.count(
-        clTest[c]
-    )
+for item in clTest:
+    if (item in votecountdict):
+        votecountdict[item] += 1
+    else:
+        votecountdict[item] = 1
+for key, value in votecountdict.items():
+    print("% s -> % d" % (key, value))
 
 
 #print(candidatelist) 
-print(votecountdict)
+#print(votecountdict)
  #   candidate()
  #   print(khan)
 
