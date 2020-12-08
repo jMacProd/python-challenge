@@ -79,6 +79,19 @@ for x in votecountdict:
 
 #print(percentage)
 
+#split dictionary into list
+#prit both lists to check order
+#Print percentage list to check order
+#zip 3 lists
+#loop to print each value
+
+VCD_keys = votecountdict.keys() 
+VCD_values = votecountdict.values()
+zipped = zip(VCD_keys, VCD_values, percentage)
+zipped_list = list(zipped)
+
+#for z in zipped_list:
+#   print(str(z[0]) + ": " + str('{:.3%}'. format(z[2])) + " (" + str(z[1]) + ")")
 
 
 #The winner of the election based on popular vote.
@@ -86,15 +99,20 @@ winner = max(votecountdict, key=votecountdict.get)
 
 
 
+#for key in votecountdict:
+#        for figure in percentage:
+#            print ("The key name is " + key + ": " + str('{0:.0%}'.format(figure)))
 
 print(f"Election Results")
 print(f"-------------------------")
-print(f"Total Votes: {str(len(voterlist))}") #3521001
+print(f"Total Votes: {str(len(voterlist))}")
 print(f"-------------------------")
-#print(f"{votecountdict[0]}: {percentage[0]}% ({votecountdict[0]})")
-#print(f"Correy: 20.000% (704200)")
-#print(f"Li: 14.000% (492940)")
-#print(f"O'Tooley: 3.000% (105630)")
-#print(f"-------------------------")
+for z in zipped_list:
+   print(str(z[0]) + ": " + str('{:.3%}'. format(z[2])) + " (" + str(z[1]) + ")")
+#print(f" : {percentage[0]}% (")#{votecountdict["Khan"]})")
+#print(f" : {percentage[1]}% ()")
+#print(f"{next(iter(votecountdict))}: {percentage[2]}% ()")
+#print(f"{next(iter(votecountdict))}: {percentage[3]}% ()")
+print(f"-------------------------")
 print(f"Winner: {winner}")
-#print(f"-------------------------")
+print(f"-------------------------")
