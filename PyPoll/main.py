@@ -109,10 +109,20 @@ print(f"Total Votes: {str(len(voterlist))}")
 print(f"-------------------------")
 for z in zipped_list:
    print(str(z[0]) + ": " + str('{:.3%}'. format(z[2])) + " (" + str(z[1]) + ")")
-#print(f" : {percentage[0]}% (")#{votecountdict["Khan"]})")
-#print(f" : {percentage[1]}% ()")
-#print(f"{next(iter(votecountdict))}: {percentage[2]}% ()")
-#print(f"{next(iter(votecountdict))}: {percentage[3]}% ()")
 print(f"-------------------------")
 print(f"Winner: {winner}")
 print(f"-------------------------")
+
+#Export to textfile
+output_path = os.path.join("Analysis", "PyPollAnalysis.txt")
+
+with open(output_path, "w") as textfile:
+    textfile.write(f"Election Results\n")
+    textfile.write(f"-------------------------\n")
+    textfile.write(f"Total Votes: {str(len(voterlist))}\n")
+    textfile.write(f"-------------------------\n")
+    for z in zipped_list:
+        textfile.write(str(z[0]) + ": " + str('{:.3%}'. format(z[2])) + " (" + str(z[1]) + ")\n")
+    textfile.write(f"-------------------------\n")
+    textfile.write(f"Winner: {winner}\n")
+    textfile.write(f"-------------------------\n")
