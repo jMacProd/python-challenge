@@ -1,66 +1,20 @@
 # python-challenge
-
-# Project Name
-> Here goes your awesome project description!
-
-## Table of contents
-* [General info](#general-info)
-* [Screenshots](#screenshots)
-* [Technologies](#technologies)
-* [Setup](#setup)
-* [Features](#features)
-* [Status](#status)
-* [Inspiration](#inspiration)
-* [Contact](#contact)
-
-## General info
-Add more general information about project. What the purpose of the project is? Motivation?
-
-## Screenshots
-![Example screenshot](./img/screenshot.png)
+> Using Python to read in CSV data and provide summary results for two projects: PyBank (financil data) anbd PyPoll (election data)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Python - version 3.6
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+Python code and resources are all included. Repository can be downloaded and run in one directory
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
-
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+Exports summary table to text file in existing Analysis directory
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is finalised
 
-## Inspiration
-Add here credits. Project inspired by..., based on...
-
-## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
-
-
-voterlist = []
-candidatelist = []
-clTest = []
-#uniquename = []
-
-
-
-Resources
-
-PyBank
+## Resources
+### PyBank
     https://stackoverflow.com/questions/7172933/calculate-difference-between-adjacent-items-in-a-python-list
 
     https://careerkarma.com/blog/python-average/#:~:text=We%20can%20find%20the%20average,the%20Python%20mean()%20function. 
@@ -69,9 +23,10 @@ PyBank
 
     https://www.geeksforgeeks.org/python-get-key-with-maximum-value-in-dictionary/
 
-PyPoll
+### PyPoll
     https://www.geeksforgeeks.org/python-get-unique-values-list/
 
     https://www.tutorialspoint.com/counting-the-frequencies-in-a-list-using-dictionary-in-python
 
-
+## Contact
+Created by https://github.com/jMacProd - feel free to contact me!
