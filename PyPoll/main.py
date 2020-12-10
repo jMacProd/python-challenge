@@ -3,7 +3,7 @@ import csv
 
 voterlist = []
 candidatelist = []
-clTest = []
+candidatefull = []
 
 csvpath = os.path.join("Resources","election_data.csv")
 
@@ -19,7 +19,7 @@ with open(csvpath, "r") as csvfile:
         voterlist.append(row[0])
 
         #The full list of everytime a candidate is voted for - allows for a count of each candidate
-        clTest.append(row[2])
+        candidatefull.append(row[2])
 
         #A unique list of candidates who received votes
         #https://www.geeksforgeeks.org/python-get-unique-values-list/
@@ -29,7 +29,7 @@ with open(csvpath, "r") as csvfile:
 #To tally each candidates' votes
 #https://www.tutorialspoint.com/counting-the-frequencies-in-a-list-using-dictionary-in-python
 votecountdict = {}
-for item in clTest:
+for item in candidatefull:
     if (item in votecountdict):
         votecountdict[item] += 1
     else:
